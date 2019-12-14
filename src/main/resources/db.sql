@@ -1,10 +1,12 @@
-SELECT * FROM db_example.users;
-SELECT * FROM db_example.roles;
-SELECT * FROM db_example.user_roles;
+CREATE SCHEMA `users`;
 
-DROP TABLE db_example.users;
-DROP TABLE db_example.roles;
-DROP TABLE db_example.user_roles;
+SELECT * FROM users.users;
+SELECT * FROM users.roles;
+SELECT * FROM users.user_roles;
+
+-- DROP TABLE users.users;
+-- DROP TABLE users.roles;
+-- DROP TABLE users.user_roles;
 
 -- Table: users
 CREATE TABLE users (
@@ -41,6 +43,5 @@ CREATE TABLE user_roles (
 INSERT INTO roles VALUES (1, 'ROLE_USER');
 INSERT INTO roles VALUES (2, 'ROLE_ADMIN');
 
--- UserName: admin; Password: 1
-INSERT INTO users VALUES (1, 'admin', '$2a$10$FimkM/GY3KKDfepfx/2UeujXl4L3MnQekqnVdps9xcRRgg6hqUAeG', 31, 'ROLE_ADMIN', 2);
+INSERT INTO users VALUES (1, '1', '$2a$10$FimkM/GY3KKDfepfx/2UeujXl4L3MnQekqnVdps9xcRRgg6hqUAeG', 31, 'ROLE_ADMIN', 2);
 INSERT INTO user_roles VALUES(1, 2);
